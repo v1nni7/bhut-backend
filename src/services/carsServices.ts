@@ -7,12 +7,14 @@ async function getCars() {
   return data
 }
 
-async function createCar(data: CreateCarsParams) {
-  const { status } = await instance.post('/cars', data)
+async function createCar(body: CreateCarsParams) {
+  const { data, status } = await instance.post('/cars', body)
 
-  if (status !== 201) {
-    throw new Error('Error to create car')
+  if (status !== 200) {
+    throw new Error('Error creating car')
   }
+
+  return data
 }
 
 export default {
