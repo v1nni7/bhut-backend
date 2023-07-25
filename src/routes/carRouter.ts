@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
 import { createCarSchema } from '@/schemas/carsSchema'
-import carsController from '@/controllers/carsController'
+import carsController from '@/controllers/carController'
 import validateSchema from '@/middleware/validateSchemaMiddleware'
 
 const carsRouter = Router()

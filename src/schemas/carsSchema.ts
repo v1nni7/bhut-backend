@@ -1,7 +1,7 @@
 import Joi from 'joi'
-import { CreateCarsParams } from '@/types/carsTypes'
+import { CreateCarParams } from '@/types/carsTypes'
 
-export const createCarSchema = Joi.object<CreateCarsParams>({
+export const createCarSchema = Joi.object<CreateCarParams>({
   title: Joi.string().required(),
   brand: Joi.string().required(),
   price: Joi.string().required(),

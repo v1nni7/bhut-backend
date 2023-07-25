@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import carsServices from '@/services/carsServices'
+import carsServices from '@/services/carServices'
 
 async function getCars(_: Request, res: Response) {
   try {
