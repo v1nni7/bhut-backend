@@ -1,6 +1,5 @@
 import amqp from 'amqplib'
 import axios from 'axios'
-import { error } from 'console'
 
 export const queueName = 'car_created'
 const rabbitURL = process.env.RABBIT_URL || 'amqp://localhost:5672'
