@@ -5,4 +5,8 @@ function createLog(data: CreateLogParams) {
   logCollection?.insertOne(data)
 }
 
-export default { createLog }
+function findAll() {
+  return logCollection?.find().toArray()
+}
+
+export default { createLog, findAll }

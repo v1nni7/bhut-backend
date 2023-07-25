@@ -13,6 +13,11 @@ async function createLog(data: CreatedCarData) {
   logRepository.createLog(logData)
 }
 
+async function getAllLogs() {
+  return logRepository.findAll()
+}
+
 export default {
   createLog,
+  getAllLogs,
 }
