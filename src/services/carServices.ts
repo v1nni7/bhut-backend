@@ -1,6 +1,7 @@
 import instance from '@/lib/axios'
 import { CreateCarParams } from '@/types/carsTypes'
 import logServices from './logServices'
+import connectRabbitMQ, { queueName } from '@/lib/rabbit'
 
 async function getCars() {
   const { data } = await instance.get('/cars')
@@ -16,6 +17,10 @@ async function createCar(body: CreateCarParams) {
   }
 
   await logServices.createLog(data)
+
+  const channel = await connectRabbitMQ()
+
+  channel?.sendToQueue(queueName, Buffer.from(JSON.stringify(data)))
 
   return data
 }
