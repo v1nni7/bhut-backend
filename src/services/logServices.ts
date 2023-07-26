@@ -2,7 +2,7 @@ import { Car } from '@/types'
 import { logRepository } from '@/repository'
 
 async function createLog(data: Car) {
-  const date_time = await GenerateFriendlyDateTime()
+  const date_time = await generateFriendlyDateTime()
 
   const logData = {
     date_time,
@@ -17,7 +17,7 @@ async function getAll() {
   return await logRepository.findAll()
 }
 
-async function GenerateFriendlyDateTime() {
+export async function generateFriendlyDateTime() {
   const datetime = new Date().toISOString()
 
   const friendlyDatetime = datetime.replace('T', ' ').replace('Z', '')
