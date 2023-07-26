@@ -1,5 +1,5 @@
-import logController from '@/controllers/logController'
 import { Router } from 'express'
+import { logController } from '@/controllers'
 
 const logRouter = Router()
 

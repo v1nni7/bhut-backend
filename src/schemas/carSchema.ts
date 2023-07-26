@@ -1,5 +1,5 @@
 import Joi from 'joi'
-import { CreateCarParams } from '@/types/carsTypes'
+import { CreateCarParams } from '@/types'
 
 export const createCarSchema = Joi.object<CreateCarParams>({
   title: Joi.string().required(),

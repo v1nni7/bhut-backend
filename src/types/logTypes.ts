@@ -1,3 +1,5 @@
-import { Log } from '@prisma/client'
-
-export type CreateLogParams = Omit<Log, 'id' | 'date_time'>
+export type CreateLogParams = {
+  type: string
+  car_id: string
+  date_time: string
+}

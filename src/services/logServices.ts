@@ -1,23 +1,28 @@
-import { CreatedCarData } from '@/types/carsTypes'
-import logRepository from '@/repository/logRepository'
+import { Car } from '@/types'
+import { logRepository } from '@/repository'
 
-async function createLog(data: CreatedCarData) {
-  const date_time = new Date().toISOString()
+async function createLog(data: Car) {
+  const date_time = await GenerateFriendlyDateTime()
 
   const logData = {
+    date_time,
     type: 'create',
     car_id: data._id,
-    date_time,
   }
 
-  logRepository.createLog(logData)
+  return logRepository.create(logData)
 }
 
-async function getAllLogs() {
-  return logRepository.findAll()
+async function getAll() {
+  return await logRepository.findAll()
 }
 
-export default {
-  createLog,
-  getAllLogs,
+async function GenerateFriendlyDateTime() {
+  const datetime = new Date().toISOString()
+
+  const friendlyDatetime = datetime.replace('T', ' ').replace('Z', '')
+
+  return friendlyDatetime
 }
+
+export { createLog, getAll }

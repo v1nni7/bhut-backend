@@ -1,12 +1,12 @@
-import { logCollection } from '@/lib/mongo'
-import { CreateLogParams } from '@/types/logTypes'
+import { logCollection } from '@/config'
+import { CreateLogParams } from '@/types'
 
-function createLog(data: CreateLogParams) {
-  logCollection?.insertOne(data)
+function create(data: CreateLogParams) {
+  return logCollection?.insertOne(data)
 }
 
 function findAll() {
   return logCollection?.find().toArray()
 }
 
-export default { createLog, findAll }
+export { create, findAll }

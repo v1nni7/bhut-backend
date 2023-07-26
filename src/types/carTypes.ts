@@ -5,6 +5,6 @@ export type CreateCarParams = {
   age: number
 }
 
-export type CreatedCarData = CreateCarParams & {
+export type Car = CreateCarParams & {
   _id: string
 }

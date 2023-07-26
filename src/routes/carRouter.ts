@@ -1,13 +1,13 @@
 import { Router } from 'express'
 
-import { createCarSchema } from '@/schemas/carsSchema'
-import carsController from '@/controllers/carController'
-import validateSchema from '@/middleware/validateSchemaMiddleware'
+import { carController } from '@/controllers'
+import { validateSchema } from '@/middleware'
+import { createCarSchema } from '@/schemas'
 
 const carsRouter = Router()
 
 carsRouter
-  .get('/listCars', carsController.getCars)
-  .post('/createCar', validateSchema(createCarSchema), carsController.createCar)
+  .get('/listCars', carController.getCars)
+  .post('/createCar', validateSchema(createCarSchema), carController.createCar)
 
 export default carsRouter

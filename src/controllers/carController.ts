@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import carsServices from '@/services/carServices'
+import { carServices } from '@/services'
 
 async function getCars(_: Request, res: Response) {
   try {
-    const cars = await carsServices.getCars()
+    const cars = await carServices.getCars()
 
     res.status(200).json(cars)
   } catch (error) {
@@ -15,7 +15,7 @@ async function createCar(req: Request, res: Response) {
   try {
     const { body } = req
 
-    const createdCar = await carsServices.createCar(body)
+    const createdCar = await carServices.createCar(body)
 
     res.status(201).send(createdCar)
   } catch (error) {
@@ -23,7 +23,4 @@ async function createCar(req: Request, res: Response) {
   }
 }
 
-export default {
-  getCars,
-  createCar,
-}
+export { getCars, createCar }

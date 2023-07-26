@@ -1,7 +1,6 @@
-import instance from '@/lib/axios'
-import { CreateCarParams } from '@/types/carsTypes'
-import logServices from './logServices'
-import connectRabbitMQ, { queueName } from '@/lib/rabbit'
+import { logServices } from '@/services'
+import { CreateCarParams } from '@/types'
+import { instance, queueName, connectRabbitMQ } from '@/lib'
 
 async function getCars() {
   const { data } = await instance.get('/cars')
@@ -25,7 +24,4 @@ async function createCar(body: CreateCarParams) {
   return data
 }
 
-export default {
-  getCars,
-  createCar,
-}
+export { getCars, createCar }

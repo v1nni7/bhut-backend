@@ -58,4 +58,4 @@ async function sendWebhook(carData) {
 
 consumeFromQueue()
 
-export default connectRabbitMQ
+export { connectRabbitMQ }
