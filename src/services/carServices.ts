@@ -15,8 +15,6 @@ async function getAll() {
 async function createCar(body: CreateCarParams) {
   const { data, status } = await instance.post('/cars', body)
 
-  console.log(status)
-
   await validateResponseStatusOrFail(status)
 
   await logServices.createLog(data)
