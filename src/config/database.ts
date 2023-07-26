@@ -1,6 +1,6 @@
 import { Collection, MongoClient } from 'mongodb'
 
-const mongoURL = process.env.DATABASE_URL || 'mongodb://localhost:27017'
+const mongoURL = process.env.DATABASE_URL || 'mongodb://mongo:27017'
 let logCollection: Collection | null = null
 
 async function connectMongo() {
