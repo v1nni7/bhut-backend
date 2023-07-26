@@ -1,12 +1,14 @@
-import { instaceWebhook } from '@/lib'
 import amqp, { Channel } from 'amqplib'
+import { instaceWebhook } from '@/lib'
 
 export const queueName = 'car_created'
 
-const rabbitURL = process.env.RABBIT_URL || 'amqp://localhost:5672'
+const rabbitURL = 'amqp://rabbitmq:5672/'
 
 async function connectRabbitMQ() {
   try {
+    console.log(`Try to connect to RabbitMQ at ${rabbitURL}`)
+
     const connection = await amqp.connect(rabbitURL)
     const channel = await connection.createChannel()
 
