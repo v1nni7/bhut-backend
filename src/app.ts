@@ -4,7 +4,7 @@ import express, { json } from 'express'
 import cors from 'cors'
 
 import router from '@/routes'
-import { connectMongo } from '@/config'
+import { connectMongo, connectRabbitMQ } from '@/config'
 
 const app = express()
 
@@ -13,5 +13,6 @@ app.use(json())
 app.use(router)
 
 connectMongo()
+connectRabbitMQ()
 
 export default app

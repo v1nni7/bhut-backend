@@ -1,7 +1,8 @@
+import { instance } from '@/lib'
 import { httpResponse } from '@/utils'
 import { logServices } from '@/services'
 import { CreateCarParams } from '@/types'
-import { instance, queueName, connectRabbitMQ } from '@/lib'
+import { queueName, connectRabbitMQ } from '@/config'
 
 async function getAll() {
   const { data, status } = await instance.get('/cars')

@@ -4,4 +4,8 @@ const instance = axios.create({
   baseURL: 'http://api-test.bhut.com.br:3000/api',
 })
 
-export { instance }
+const instaceWebhook = axios.create({
+  baseURL: process.env.WEBHOOK_URL,
+})
+
+export { instance, instaceWebhook }
