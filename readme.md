@@ -71,10 +71,16 @@ ou
 docker run hello-world
 ```
 
-2. Crie e configure o arquivo `.env`, utilizando as seguintes variáveis de ambiente (Opcional)
+1. Crie e configure o arquivo `.env`, utilizando as seguintes variáveis de ambiente
 ```env
-PORT="Coloque o número da porta desejada"
+PORT="Coloque o número da porta desejada" (Opcional)
 WEBHOOK_URL="Coloque a URL do Webhook criado"
+```
+
+2. Instale todas as depências
+
+```bash
+npm i 
 ```
 
 3. Caso tenha alterado o número da porta altere o `ports` no arquivo `docker-compose.yml`
