@@ -62,7 +62,21 @@ Após executar essas etapas, o projeto será iniciado e estará disponível loca
 
 # ⚙ Executando o projeto com o Docker
 
-1. Primeiramente verifique se o docker está instalado em seu computador
+1. Clone o repositório para o seu ambiente de desenvolvimento.
+
+```bash
+git clone https://github.com/v1nni7/bhut-backend.git
+```
+
+2. Navegue até o diretório clonado do projeto
+```
+cd bhut-backend
+
+# Caso tenha mudado o nome do diretório
+cd nome-do-diretorio
+```
+
+3. Primeiramente verifique se o docker está instalado em seu computador
 ```bash
 docker -v 
 
@@ -71,19 +85,19 @@ ou
 docker run hello-world
 ```
 
-1. Crie e configure o arquivo `.env`, utilizando as seguintes variáveis de ambiente
+4. Crie e configure o arquivo `.env`, utilizando as seguintes variáveis de ambiente
 ```env
 PORT="Coloque o número da porta desejada" (Opcional)
 WEBHOOK_URL="Coloque a URL do Webhook criado"
 ```
 
-2. Instale todas as depências
+5. Instale todas as depências
 
 ```bash
 npm i 
 ```
 
-3. Caso tenha alterado o número da porta altere o `ports` no arquivo `docker-compose.yml`
+6. Caso tenha alterado o número da porta altere o `ports` no arquivo `docker-compose.yml`
 ```docker-compose
   node_app:
     ports: 
@@ -92,7 +106,7 @@ npm i
 // OBS: O número da porta precisa ser o mesmo da ENV
 ```
 
-4. Execute o comando para subir os containers
+7. Execute o comando para subir os containers
 ```bash
 docker-compose up --build
 ```
